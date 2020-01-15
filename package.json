@@ -1,0 +1,25 @@
+{
+  "name": "javascript-data-structures-and-algorithms",
+  "version": "1.0.0",
+  "description": "repository holding completed DS and algorithms in javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulACoroneos/javascript-data-structures-and-algorithms.git"
+  },
+  "keywords": [
+    "javascript",
+    "data",
+    "structures",
+    "algorithms"
+  ],
+  "author": "Paul Coroneos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaulACoroneos/javascript-data-structures-and-algorithms/issues"
+  },
+  "homepage": "https://github.com/PaulACoroneos/javascript-data-structures-and-algorithms#readme"
+}
