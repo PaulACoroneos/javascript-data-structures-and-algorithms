@@ -9,11 +9,11 @@ class Stack {
   }
 
   pop() {
+    if (this._length < 1) return console.log("Cannot pop from a stack containing no elements");
     return delete this._storage[--this._length];
   }
 
   peek() {
-    //console.log("hey in stack ", this._storage[this._length - 1]);
     return this._storage[this._length - 1];
   }
 }
@@ -30,5 +30,8 @@ stack.pop();
 stack.peek();
 stack.push("Bye");
 stack.peek();
+stack.pop();
+stack.pop();
+stack.pop();
 
 
