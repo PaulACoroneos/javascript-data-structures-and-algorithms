@@ -1,4 +1,4 @@
-class Stack {
+export default class Stack {
   constructor() {
     this._storage = {};
     this._length = 0;
@@ -30,7 +30,6 @@ stack.pop();
 stack.peek();
 stack.push("Bye");
 stack.peek();
-stack.pop();
 stack.pop();
 stack.pop();
 
