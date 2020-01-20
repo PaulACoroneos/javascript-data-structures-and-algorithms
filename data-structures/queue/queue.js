@@ -1,4 +1,4 @@
-class Queue {
+export default class Queue {
 
   constructor(size) {
     this._data = [];
@@ -46,14 +46,3 @@ class Queue {
     return;
   }
 }
-
-var queue = new Queue(10);
-
-queue.enqueue("hello");
-queue.enqueue("world");
-console.error(queue.getLast());
-console.error(queue.getFront());
-queue.print();
-queue.dequeue();
-queue.dequeue();
-queue.print();
