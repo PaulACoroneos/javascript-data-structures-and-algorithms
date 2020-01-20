@@ -1,4 +1,4 @@
-class LinkedList {
+export default class LinkedList {
   constructor(value) {
     this.head = { value, next: null };
     this.tail = this.head;
@@ -56,14 +56,3 @@ class LinkedList {
     }
   }
 }
-
-const linkedList = new LinkedList("hello");
-
-linkedList.print();
-linkedList.insert("world");
-linkedList.insert("Paul");
-linkedList.print();
-linkedList.removeNode("Paul");
-linkedList.print();
-linkedList.removeTail();
-linkedList.print();
