@@ -10,7 +10,10 @@ describe('palindromePermutation', () => {
   test('Expect "pau" "uap" to return false', () => {
     expect(oneAway('pau', 'uap')).toBe(false);
   })
-  test('Expect "pau" "paul to return true', () => {
+  test('Expect "pau" "paul" to return true', () => {
+    expect(oneAway('pau', 'paul')).toBe(true);
+  });
+  test('Expect "lll" "lla" to return true', () => {
     expect(oneAway('pau', 'paul')).toBe(true);
   });
 })
