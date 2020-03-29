@@ -23,4 +23,28 @@ describe('Queue', () => {
     expect(queue.getFront()).toBe('world');
     expect(queue.getLast()).toBe('world');
   })
+  test('print() works', () => {
+    const queue = new Queue(10);
+    queue.enqueue('hello');
+    expect(queue.print()).toStrictEqual(['hello'])
+    queue.dequeue();
+    expect(queue.print()).toStrictEqual([])
+  })
+  test('Does not enqueue an item if queue is full', () => {
+    const queue = new Queue(0);
+    queue.enqueue('hello')
+    expect(queue.enqueue('hello2')).toBe(false);
+  })
+  test('getFront() returns false if empty', () => {
+    const queue = new Queue(0);
+    expect(queue.getFront()).toBe(false);
+  })
+  test('getLast() returns false if empty', () => {
+    const queue = new Queue(0);
+    expect(queue.getLast()).toBe(false);
+  })
+  test('dequeue() returns false if empty', () => {
+    const queue = new Queue(0);
+    expect(queue.dequeue()).toBe(false);
+  })
 })
