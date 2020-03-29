@@ -1,16 +1,20 @@
 export default class LinkedList {
-  constructor(value) {
+
+  private head: any;
+  private tail: any;
+
+  constructor(value: any) {
     this.head = { value, next: null };
     this.tail = this.head;
   }
 
-  insert(value) {
+  insert(value: any) {
     const node = { value, next: null };
     this.tail.next = node;
     this.tail = node;
   }
 
-  removeNode(value) {
+  removeNode(value: any) {
     let currentNode = this.head;
     let previousNode;
     while (currentNode) {

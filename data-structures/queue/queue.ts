@@ -1,12 +1,16 @@
 export default class Queue {
 
-  constructor(size) {
+  private _data: any[];
+  private _rear: number;
+  private _size: number;
+
+  constructor(size: number) {
     this._data = [];
     this._rear = 0;
     this._size = size;
   }
 
-  enqueue(element) {
+  enqueue(element: any) {
     if (this._rear > this._size) return console.error("Error: Cannot enqueue. Queue is full.");
     this._data[this._rear++] = element;
   }

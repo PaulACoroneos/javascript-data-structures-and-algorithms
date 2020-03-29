@@ -24,19 +24,19 @@
   },
   "homepage": "https://github.com/PaulACoroneos/javascript-data-structures-and-algorithms#readme",
   "devDependencies": {
-    "@babel/cli": "^7.8.3",
-    "@babel/core": "^7.8.3",
-    "@babel/node": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "@types/jest": "^24.9.0",
-    "@types/node": "^13.1.8",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.0",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^13.9.5",
     "eslint": "^6.0.1",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jest": "^22.7.1",
-    "husky": "^4.0.10",
+    "husky": "^4.2.3",
     "jest": "^24.9.0",
     "ts-jest": "^24.3.0",
-    "typescript": "^3.7.5"
+    "typescript": "^3.8.3"
   }
 }
