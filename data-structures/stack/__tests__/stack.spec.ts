@@ -7,11 +7,13 @@ describe('stack', () => {
     expect(stack.peek()).toBe('test');
   })
 
-  test('If I push an item on the stack and then pop it off the stack is empty', () => {
+  test('If I push an item on the stack and then pop it off the stack is empty and subsequently return undefined', () => {
     const stack = new Stack();
     stack.push('test');
     expect(stack.peek()).toBe('test');
     stack.pop();
     expect(stack.peek()).toBe(undefined);
+    expect(stack.pop()).toBe(undefined);
   })
+
 })

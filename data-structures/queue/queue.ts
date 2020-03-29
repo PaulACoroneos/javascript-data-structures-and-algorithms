@@ -11,8 +11,9 @@ export default class Queue {
   }
 
   enqueue(element: any) {
-    if (this._rear > this._size) return console.error("Error: Cannot enqueue. Queue is full.");
+    if (this._rear > this._size) return false;
     this._data[this._rear++] = element;
+    return true;
   }
 
   length() {
@@ -24,24 +25,24 @@ export default class Queue {
   }
 
   getFront() {
-    if (this.isEmpty()) return console.error("Error: Cannot getFront() as queue is empty");
+    if (this.isEmpty()) return false;
     return this._data[0];
   }
 
   getLast() {
-    if (this.isEmpty()) return console.error("Error: Cannot getLast() as queue is empty");
+    if (this.isEmpty()) return false;
     return this._data[this._rear - 1];
   }
 
   dequeue() {
-    if (this.isEmpty()) return console.error("Error: Cannot dequeue() as queue is empty");
+    if (this.isEmpty()) return false;
     this._rear--;
-    return this._data.shift();
+    this._data.shift();
+    return true;
   }
 
   print() {
-    if (this.isEmpty()) return console.log("No elements to return. Queue is empty");
-    return this._data.forEach(element => console.log(element));
+    return this._data;
   }
 
   clear() {

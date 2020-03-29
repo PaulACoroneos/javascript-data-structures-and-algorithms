@@ -1,22 +1,29 @@
+interface Head {
+  value: any;
+  next: any;
+}
+
 export default class LinkedList {
 
-  private head: any;
+  private head: Head;
   private tail: any;
 
   constructor(value: any) {
-    this.head = { value, next: null };
+    this.head = { value: value, next: null };
     this.tail = this.head;
   }
 
-  insert(value: any) {
+  append(value: any) {
     const node = { value, next: null };
+    if (!this.head.next) this.head.next = node;
     this.tail.next = node;
     this.tail = node;
+    return this;
   }
 
   removeNode(value: any) {
     let currentNode = this.head;
-    let previousNode;
+    let previousNode = { value: null, next: null };
     while (currentNode) {
       if (currentNode.value === value) {
         break;
@@ -31,17 +38,15 @@ export default class LinkedList {
       this.head = this.head.next;
       return;
     }
-
     previousNode.next = currentNode.next;
   }
 
   removeTail() {
     let currentNode = this.head;
-    let previousNode;
+    let previousNode = { value: null, next: null };
 
     while (currentNode) {
       if (!currentNode.next) break;
-
       previousNode = currentNode;
       currentNode = currentNode.next;
     }
@@ -51,12 +56,12 @@ export default class LinkedList {
   }
 
   print() {
-    let count = 0;
+    const printArr = [];
     let currentNode = this.head;
     while (currentNode) {
-      console.log(`value at index ${count} is ${currentNode.value}`);
-      count++;
+      printArr.push(currentNode.value)
       currentNode = currentNode.next;
     }
+    return printArr;
   }
 }
