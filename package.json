@@ -4,7 +4,7 @@
   "description": "repository holding completed DS and algorithms in javascript",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./src/*",
+    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "test": "jest --coverage"
   },
   "repository": {
@@ -30,13 +30,30 @@
     "@babel/preset-env": "^7.9.0",
     "@types/jest": "^24.9.1",
     "@types/node": "^13.9.5",
-    "eslint": "^6.0.1",
-    "eslint-config-airbnb": "^17.1.0",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jest": "^22.7.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint": "^6.0.1",
     "husky": "^4.2.3",
     "jest": "^24.9.0",
+    "prettier": "^2.0.2",
     "ts-jest": "^24.3.0",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "lint-staged": "^10.0.10"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsc --noEmit && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
   }
 }
