@@ -14,6 +14,7 @@ module.exports = {
         "no-lonely-if": "off",
         "class-methods-use-this": "off",
         "arrow-body-style": "off",
-        "no-loop-func": "off"
+        "no-loop-func": "off",
+        "@typescript-eslint/explicit-function-return-type": "off"
     }
 };

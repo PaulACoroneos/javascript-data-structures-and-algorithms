@@ -3,23 +3,21 @@
  * @param {string} S
  * @return {number}
  */
-var numJewelsInStones = function(J, S) {
-    
-    var counter = 0;
+
+export const numJewelsInStones = (J, S) => {
+    let counter = 0;
     //we need to use REGEX
-    var J = J.split('');    //create array of terms to search agianst
-    var jewels;
-    var match;
+    const J = J.split(''); //create array of terms to search agianst
+    let jewels;
+    let match;
     //console.log("length",J.length);
-    for(var i=0;i<J.length;i++) {
-        jewels= new RegExp(J[i],"g");
+    for (let i = 0; i < J.length; i++) {
+        jewels = new RegExp(J[i], 'g');
         //console.log(jewels);
         match = (S || '').match(jewels);
         //console.log(match);
-        counter +=  match ? match.length: 0;
+        counter += match ? match.length : 0;
         //console.log("counter",counter);
     }
     return counter;
-
-    
 };
