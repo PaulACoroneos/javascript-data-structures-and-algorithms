@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 //iterative fibonacci
 // export const fib = (num: number) => {
 //     const result = [0, 1];
@@ -10,6 +11,7 @@
 //     return result[count];
 // };
 
+//recursive fibonacci
 type Cache = {
     [key: string]: any;
 };
@@ -24,10 +26,9 @@ const memoize = (fn: Function) => {
     };
 };
 
-//recursive fibonacci
 export const slowFib = (num: number): number => {
     if (num < 2) return num;
-    return slowFib(num - 2) + slowFib(num - 1);
+    return fib(num - 2) + fib(num - 1);
 };
 
 export const fib = memoize(slowFib);
