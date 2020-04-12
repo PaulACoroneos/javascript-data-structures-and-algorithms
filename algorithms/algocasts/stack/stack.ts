@@ -6,14 +6,14 @@ export class Stack {
     }
 
     push(record: any) {
-        this.data.push(record);
+        this.data.unshift(record);
     }
 
     pop() {
-        return this.data.pop();
+        return this.data.shift();
     }
 
     peek() {
-        return this.data[this.data.length - 1];
+        return this.data[0];
     }
 }
