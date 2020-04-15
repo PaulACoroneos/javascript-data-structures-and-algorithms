@@ -1,4 +1,4 @@
-import { BSTNode } from './../bst';
+import { BSTNode, validate } from './../bst';
 test('BSTNode is a constructor', () => {
     expect(typeof BSTNode.prototype.constructor).toEqual('function');
 });
@@ -37,4 +37,26 @@ test('Contains returns null if value not found', () => {
     node.insert(3);
 
     expect(node.contains(9999)).toEqual(null);
+});
+
+test('Validate recognizes a valid BST', () => {
+    const n = new BSTNode(10);
+    n.insert(5);
+    n.insert(15);
+    n.insert(0);
+    n.insert(20);
+
+    expect(validate(n)).toEqual(true);
+});
+
+test('Validate recognizes an invalid BST', () => {
+    const n = new BSTNode(10);
+    n.insert(5);
+    n.insert(15);
+    n.insert(0);
+    n.insert(20);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    n.left!.left!.right = new BSTNode(999);
+
+    expect(validate(n)).toEqual(false);
 });
