@@ -1,19 +1,12 @@
 import checkPermutations from '../check-permutations';
-
-describe('checkPermutations', () => {
-  test('If strings are different sizes return false', () => {
-    const isPermutation = checkPermutations('lololol', 'olololool');
-    expect(isPermutation).toBe(false);
-  });
-
-  test('If strings are permutations of each other return true', () => {
-    const isPermutation = checkPermutations('paul coroneos', 'luap soenoroc');
-    expect(isPermutation).toBe(true);
-  });
-
-  test('If one string is not a permutation of the other it returns false', () => {
-    const isPermutation = checkPermutations('@#$', 'abc');
-    expect(isPermutation).toBe(false);
-  });
-
-})
+describe('test checkPermutations', () => {
+    test('returns false for uneven str lengths', () => {
+        expect(checkPermutations('long', 'longer')).toBe(false);
+    });
+    test('returns false for strings that are not permutations of each other', () => {
+        expect(checkPermutations('abba', 'dada')).toBe(false);
+    });
+    test('returns true for strings that are permutations of each other', () => {
+        expect(checkPermutations('radar', 'darar')).toBe(false);
+    });
+});
